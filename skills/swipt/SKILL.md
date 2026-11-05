@@ -23,3 +23,12 @@ The universal iOS automation platform.
 - `references/api/*.d.ts`: for SDK declarations and REPL globals
 - `references/cli.txt`: for Swipt CLI commands and options
 - `references/docs/**/*.mdx`: for English documentation
+
+## Repository
+
+If you need to debug or develop Swipt or Swiplets, it is recommended to clone the Swipt repositories to your local machine and examine them.
+
+- Swipt: `https://github.com/swipt-automation/swipt`
+- Swipt Documentations: `https://github.com/swipt-automation/swipt.io`
+- Swipt Skills: `https://github.com/swipt-automation/skills`
+- Official Swiplets: `https://github.com/swipt-automation/official-swiplets`
