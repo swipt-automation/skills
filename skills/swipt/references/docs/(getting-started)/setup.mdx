@@ -1,0 +1,37 @@
+---
+title: Setup
+---
+
+## Pair with Your Device
+
+Swipt needs to pair with your device to connect to its developer services.
+
+If you sideloaded Swipt with the Swipt CLI, pairing is set up automatically. Otherwise, follow the instructions in the app to pair:
+
+<div className="not-prose my-6 flex items-start gap-4">
+  <div className="min-w-0" style={{ flex: 1470 / 3000 }}>
+    ![iPhone pairing screen](https://swipt.io/setup/images/pairing-iPhone-en-light.webp "light")
+    ![iPhone pairing screen](https://swipt.io/setup/images/pairing-iPhone-en-dark.webp "dark")
+  </div>
+
+  <div className="min-w-0" style={{ flex: 3000 / 2300 }}>
+    ![iPad pairing screen](https://swipt.io/setup/images/pairing-iPad-en-light.webp "light")
+    ![iPad pairing screen](https://swipt.io/setup/images/pairing-iPad-en-dark.webp "dark")
+  </div>
+</div>
+
+If pairing can’t be completed, please report the issue to us. Alternatively, you can import a pairing file from other software, including:
+
+* [Jitterbug](https://github.com/osy/Jitterbug): `.mobiledevicepairing`
+* [idevice](https://github.com/jkcoxson/idevice): `ios_pairing_file.plist`
+* [go-ios](https://github.com/danielpaulus/go-ios): `selfIdentity.plist`
+
+## Loopback VPN
+
+Swipt needs a loopback VPN to connect to developer services. Follow the instructions in the app to download and turn on [LocalDevVPN](https://apps.apple.com/app/id6755608044) or [sing-box](https://sing-box.sagernet.org), which requires importing the [example profile](https://swipt.io/setup/LocalDevVPN.json).
+
+## Automatic Unlock
+
+Save your passcode so Swipt can unlock your device automatically when it’s locked.
+
+Specifically, the Swipt CLI can unlock your device to start the Swipt API/MCP, and the Swipt CLI, MCP, and installed swiplets can unlock your device to operate it.

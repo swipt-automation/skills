@@ -1,0 +1,437 @@
+Swipt CLI
+
+usage: swipt COMMAND
+
+commands:
+  project   Make, build and deploy swiplet projects
+  device    Manage the devices and read their logs
+  swiplet   Manage the swiplets on the device
+  repl      Run JavaScript in the REPL session on the device
+  sideload  Sideload Swipt
+  version   Print the version
+
+options:
+  -h, --help  help
+
+Make, build and deploy swiplet projects
+
+usage: swipt project COMMAND
+
+commands:
+  create DIRECTORY     Make a swiplet project in a new or empty directory
+  build [PROJECT]      Bundle the project into dist/<swiplet.id>.swiplet
+  source [SWIPLET...]  Collect the built swiplets into dist/ with a swiplets.json
+  deploy [PROJECT]     Build the project and install it on the device
+  develop [PROJECT]    Build, install and follow a swiplet project as it changes
+
+options:
+  -h, --help  help
+
+Make a swiplet project in a new or empty directory
+
+usage: swipt project create DIRECTORY
+
+options:
+  -h, --help  help
+
+Bundle the project into dist/<swiplet.id>.swiplet
+
+usage: swipt project build [PROJECT]
+
+options:
+  -h, --help  help
+
+Collect the built swiplets into dist/ with a swiplets.json
+
+usage: swipt project source [SWIPLET...]
+
+options:
+  -h, --help  help
+
+Build the project and install it on the device
+
+usage: swipt project deploy [PROJECT]
+
+options:
+  -d, --device NAME|URL  the device to use
+  -h, --help             help
+
+Build, install and follow a swiplet project as it changes
+
+usage: swipt project develop [PROJECT]
+
+options:
+  -d, --device NAME|URL  the device to use
+  --no-logs              without logs
+  -h, --help             help
+
+Manage the devices and read their logs
+
+usage: swipt device COMMAND
+
+commands:
+  list         List the devices, adding the ones found on the local network
+  add URL      Add a device by its URL; needed when it is remote or requires a token
+  remove NAME  Forget a device
+  stop         Stop the Swipt server
+  logs         Print the logs
+
+options:
+  -h, --help  help
+
+List the devices, adding the ones found on the local network
+
+usage: swipt device list
+
+options:
+  -h, --help  help
+
+Add a device by its URL; needed when it is remote or requires a token
+
+usage: swipt device add URL
+
+options:
+  -h, --help  help
+
+Forget a device
+
+usage: swipt device remove NAME
+
+options:
+  -h, --help  help
+
+Stop the Swipt server
+
+usage: swipt device stop
+
+options:
+  -d, --device NAME|URL  the device to use
+  -h, --help             help
+
+Print the logs
+
+usage: swipt device logs
+
+options:
+  -d, --device NAME|URL  the device to use
+  --follow               follow new entries
+  --tail COUNT           number of past entries (default 100)
+  --since DURATION       maximum age
+  --level LEVEL          minimum level (default info)
+  --swiplet ID           swiplet ID
+  -h, --help             help
+
+Manage the swiplets on the device
+
+usage: swipt swiplet COMMAND
+
+commands:
+  list             List the swiplets
+  show ID          Show a swiplet
+  install ARCHIVE  Install a swiplet archive
+  remove ID        Remove a swiplet
+  call ID ACTION   Call a swiplet action
+  service          Manage swiplet services
+  data             Manage the files in the data directory of a swiplet
+
+options:
+  -d, --device NAME|URL  the device to use
+  -h, --help             help
+
+List the swiplets
+
+usage: swipt swiplet list
+
+options:
+  -d, --device NAME|URL  the device to use
+  -h, --help             help
+
+Show a swiplet
+
+usage: swipt swiplet show ID
+
+options:
+  -d, --device NAME|URL  the device to use
+  -h, --help             help
+
+Install a swiplet archive
+
+usage: swipt swiplet install ARCHIVE
+
+options:
+  -d, --device NAME|URL  the device to use
+  -h, --help             help
+
+Remove a swiplet
+
+usage: swipt swiplet remove ID
+
+options:
+  -d, --device NAME|URL  the device to use
+  -h, --help             help
+
+Call a swiplet action
+
+usage: swipt swiplet call ID ACTION
+
+options:
+  -d, --device NAME|URL  the device to use
+  --input JSON           input JSON, @FILE or -
+  -h, --help             help
+
+Manage swiplet services
+
+usage: swipt swiplet service COMMAND
+
+commands:
+  enable ID   Turn on a swiplet service
+  disable ID  Turn off a swiplet service
+  watch [ID]  Watch swiplet services
+
+options:
+  -d, --device NAME|URL  the device to use
+  -h, --help             help
+
+Turn on a swiplet service
+
+usage: swipt swiplet service enable ID
+
+options:
+  -d, --device NAME|URL  the device to use
+  --watch                watch the state
+  -h, --help             help
+
+Turn off a swiplet service
+
+usage: swipt swiplet service disable ID
+
+options:
+  -d, --device NAME|URL  the device to use
+  --watch                watch the state
+  -h, --help             help
+
+Watch swiplet services
+
+usage: swipt swiplet service watch [ID]
+
+options:
+  -d, --device NAME|URL  the device to use
+  -h, --help             help
+
+Manage the files in the data directory of a swiplet
+
+usage: swipt swiplet data COMMAND
+
+commands:
+  list ID [PATH]            List data files
+  read ID PATH              Read a data file or directory
+  write ID PATH [FILE | -]  Write a data file
+  remove ID PATH            Remove a data file
+  clear ID                  Remove every data file, keeping the data directory
+
+options:
+  -d, --device NAME|URL  the device to use
+  -h, --help             help
+
+List data files
+
+usage: swipt swiplet data list ID [PATH]
+
+options:
+  -d, --device NAME|URL  the device to use
+  --recursive            include subdirectories
+  -h, --help             help
+
+Read a data file or directory
+
+usage: swipt swiplet data read ID PATH
+
+options:
+  -d, --device NAME|URL  the device to use
+  --output PATH          destination
+  -h, --help             help
+
+Write a data file
+
+usage: swipt swiplet data write ID PATH [FILE | -]
+
+options:
+  -d, --device NAME|URL  the device to use
+  -h, --help             help
+
+Remove a data file
+
+usage: swipt swiplet data remove ID PATH
+
+options:
+  -d, --device NAME|URL  the device to use
+  --recursive            include directory contents
+  -h, --help             help
+
+Remove every data file, keeping the data directory
+
+usage: swipt swiplet data clear ID
+
+options:
+  -d, --device NAME|URL  the device to use
+  -h, --help             help
+
+Run JavaScript in the REPL session on the device
+
+usage: swipt repl COMMAND
+
+commands:
+  run [CODE | FILE [ARG...] | - [ARG...]]  Run a JavaScript expression or program on the device
+  reset                                    Reset the session
+  api                                      Print the TypeScript declarations of the globals and modules
+  data                                     Manage the files in the data directory of the REPL
+
+options:
+  -d, --device NAME|URL  the device to use
+  -h, --help             help
+
+Run a JavaScript expression or program on the device
+
+usage: swipt repl run [CODE | FILE [ARG...] | - [ARG...]]
+
+The first argument is FILE when it names an existing file and CODE otherwise; options go before it.
+CODE is an expression whose value is printed. FILE, or standard input given as - or no argument, is a program, and only its console output is printed.
+
+options:
+  -d, --device NAME|URL  the device to use
+  --output DIRECTORY     image directory (default: a new temporary directory)
+  -h, --help             help
+
+Reset the session
+
+usage: swipt repl reset
+
+options:
+  -d, --device NAME|URL  the device to use
+  -h, --help             help
+
+Print the TypeScript declarations of the globals and modules
+
+usage: swipt repl api
+
+options:
+  -d, --device NAME|URL  the device to use
+  -h, --help             help
+
+Manage the files in the data directory of the REPL
+
+usage: swipt repl data COMMAND
+
+commands:
+  list [PATH]            List data files
+  read PATH              Read a data file or directory
+  write PATH [FILE | -]  Write a data file
+  remove PATH            Remove a data file
+  clear                  Remove every data file, keeping the data directory
+
+options:
+  -d, --device NAME|URL  the device to use
+  -h, --help             help
+
+List data files
+
+usage: swipt repl data list [PATH]
+
+options:
+  -d, --device NAME|URL  the device to use
+  --recursive            include subdirectories
+  -h, --help             help
+
+Read a data file or directory
+
+usage: swipt repl data read PATH
+
+options:
+  -d, --device NAME|URL  the device to use
+  --output PATH          destination
+  -h, --help             help
+
+Write a data file
+
+usage: swipt repl data write PATH [FILE | -]
+
+options:
+  -d, --device NAME|URL  the device to use
+  -h, --help             help
+
+Remove a data file
+
+usage: swipt repl data remove PATH
+
+options:
+  -d, --device NAME|URL  the device to use
+  --recursive            include directory contents
+  -h, --help             help
+
+Remove every data file, keeping the data directory
+
+usage: swipt repl data clear
+
+options:
+  -d, --device NAME|URL  the device to use
+  -h, --help             help
+
+Sideload Swipt
+
+usage: swipt sideload COMMAND
+
+commands:
+  install    Install Swipt
+  update     Update or renew Swipt
+  uninstall  Remove Swipt
+
+options:
+  -d, --device NAME|UDID  device paired with this Mac
+  --team ID               team ID, required if more than one
+  -h, --help              help
+
+Install Swipt
+
+usage: swipt sideload install
+
+options:
+  -d, --device NAME|UDID  device paired with this Mac
+  --team ID               team ID, required if more than one
+  --passcode CODE         set up auto-unlock with this passcode
+  --passcode-type TYPE    pin (4 or 6 digits, default), numeric or alphanumeric
+  --nightly               use nightly build
+  --no-setup              do not pair Swipt, trust its developer or publish its API
+  --no-setup-pair         do not pair Swipt
+  --no-setup-api          do not publish the API to the local network
+  -h, --help              help
+
+Update or renew Swipt
+
+usage: swipt sideload update
+
+options:
+  -d, --device NAME|UDID  device paired with this Mac
+  --team ID               team ID, required if more than one
+  --passcode CODE         unlock device with this passcode
+  --passcode-type TYPE    pin (4 or 6 digits, default), numeric or alphanumeric
+  --nightly               use nightly build
+  --no-setup              do not pair Swipt, trust its developer or publish its API
+  --no-setup-pair         do not pair Swipt
+  --no-setup-api          do not publish the API to the local network
+  -h, --help              help
+
+Remove Swipt
+
+usage: swipt sideload uninstall
+
+options:
+  -d, --device NAME|UDID  device paired with this Mac
+  --team ID               team ID, required if more than one
+  -h, --help              help
+
+Print the version
+
+usage: swipt version
+
+options:
+  -h, --help  help
