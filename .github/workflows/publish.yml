@@ -1,0 +1,36 @@
+name: Publish
+
+on:
+  push:
+    branches: [source]
+
+concurrency:
+  group: publish
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
+        with:
+          ref: source
+          submodules: true
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.4.4
+      - name: Publish
+        run: |
+          bun install --frozen-lockfile
+          (cd sources/swipt && bun install --frozen-lockfile)
+          bun generate
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          bun run publish

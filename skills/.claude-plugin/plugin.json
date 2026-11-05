@@ -1,0 +1,11 @@
+{
+  "name": "swipt",
+  "description": "The universal iOS automation platform",
+  "author": {
+    "name": "nekohasekai"
+  },
+  "homepage": "https://swipt.io",
+  "license": "GPL-3.0-or-later",
+  "keywords": ["ios", "iphone", "ipad", "automation", "swipt", "swiplet"],
+  "skills": ["./swipt"]
+}

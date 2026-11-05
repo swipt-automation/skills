@@ -1,0 +1,16 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "swipt-skills",
+  "description": "The universal iOS automation platform",
+  "owner": {
+    "name": "swipt-automation",
+    "url": "https://swipt.io"
+  },
+  "plugins": [
+    {
+      "name": "swipt",
+      "source": "./skills",
+      "description": "The universal iOS automation platform"
+    }
+  ]
+}

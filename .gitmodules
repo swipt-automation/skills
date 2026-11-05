@@ -1,0 +1,6 @@
+[submodule "sources/swipt"]
+	path = sources/swipt
+	url = https://github.com/swipt-automation/swipt.git
+[submodule "sources/swipt.io"]
+	path = sources/swipt.io
+	url = https://github.com/swipt-automation/swipt.io.git

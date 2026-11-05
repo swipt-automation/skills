@@ -1,0 +1,14 @@
+{
+  "name": "@swipt/skills",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate": "node generate.mjs",
+    "publish": "node publish.mjs"
+  },
+  "dependencies": {
+    "remark": "^15.0.1",
+    "remark-frontmatter": "^5.0.0",
+    "remark-mdx": "^3.1.1"
+  }
+}
