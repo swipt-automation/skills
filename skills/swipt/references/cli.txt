@@ -387,7 +387,7 @@ commands:
   uninstall  Remove Swipt
 
 options:
-  -d, --device NAME|UDID  device paired with this Mac
+  -d, --device NAME|UDID  the device to use
   --team ID               team ID, required if more than one
   -h, --help              help
 
@@ -396,7 +396,7 @@ Install Swipt
 usage: swipt sideload install
 
 options:
-  -d, --device NAME|UDID  device paired with this Mac
+  -d, --device NAME|UDID  the device to use
   --team ID               team ID, required if more than one
   --passcode CODE         set up auto-unlock with this passcode
   --passcode-type TYPE    pin (4 or 6 digits, default), numeric or alphanumeric
@@ -411,7 +411,7 @@ Update or renew Swipt
 usage: swipt sideload update
 
 options:
-  -d, --device NAME|UDID  device paired with this Mac
+  -d, --device NAME|UDID  the device to use
   --team ID               team ID, required if more than one
   --passcode CODE         unlock device with this passcode
   --passcode-type TYPE    pin (4 or 6 digits, default), numeric or alphanumeric
@@ -426,7 +426,7 @@ Set up Swipt
 usage: swipt sideload setup
 
 options:
-  -d, --device NAME|UDID  device paired with this Mac
+  -d, --device NAME|UDID  the device to use
   --team ID               team ID, required if more than one
   --passcode CODE         set up auto-unlock with this passcode
   --passcode-type TYPE    pin (4 or 6 digits, default), numeric or alphanumeric
@@ -439,7 +439,7 @@ Remove Swipt
 usage: swipt sideload uninstall
 
 options:
-  -d, --device NAME|UDID  device paired with this Mac
+  -d, --device NAME|UDID  the device to use
   --team ID               team ID, required if more than one
   -h, --help              help
 
