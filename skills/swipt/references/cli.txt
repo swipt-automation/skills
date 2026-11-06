@@ -383,6 +383,7 @@ usage: swipt sideload COMMAND
 commands:
   install    Install Swipt
   update     Update or renew Swipt
+  setup      Set up Swipt
   uninstall  Remove Swipt
 
 options:
@@ -416,6 +417,19 @@ options:
   --passcode-type TYPE    pin (4 or 6 digits, default), numeric or alphanumeric
   --nightly               use nightly build
   --no-setup              do not pair Swipt, trust its developer or publish its API
+  --no-setup-pair         do not pair Swipt
+  --no-setup-api          do not publish the API to the local network
+  -h, --help              help
+
+Set up Swipt
+
+usage: swipt sideload setup
+
+options:
+  -d, --device NAME|UDID  device paired with this Mac
+  --team ID               team ID, required if more than one
+  --passcode CODE         set up auto-unlock with this passcode
+  --passcode-type TYPE    pin (4 or 6 digits, default), numeric or alphanumeric
   --no-setup-pair         do not pair Swipt
   --no-setup-api          do not publish the API to the local network
   -h, --help              help
