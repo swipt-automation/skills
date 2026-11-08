@@ -28,9 +28,66 @@ If pairing can’t be completed, please report the issue to us. Alternatively, y
 
 ## Loopback VPN
 
-Swipt needs a loopback VPN to connect to developer services. Follow the instructions in the app to download and turn on [LocalDevVPN](https://apps.apple.com/app/id6755608044) or [sing-box](https://sing-box.sagernet.org), which requires importing the [example profile](https://swipt.io/setup/LocalDevVPN.json).
+Swipt needs a loopback VPN to connect to developer services. The following software is supported:
 
-Some closed-source commercial VPN clients, such as Surge ([documentation](https://manual.nssurge.com/features/ip-rewrite.html)), also support this. For other Surge-like apps without public documentation, ask their developers how to configure it.
+#### LocalDevVPN
+
+Install from the [App Store](https://apps.apple.com/app/id6755608044) and turn on the VPN.
+
+#### sing-box
+
+Install from the [App Store](https://apps.apple.com/app/id6785326793), write a correct configuration, and turn on the VPN.
+
+You need to configure `tun.loopback_address` and `tun.route_address`.
+
+Example configuration:
+
+```json
+{
+  "inbounds": [
+    {
+      "type": "tun",
+      "address": "172.19.0.1/30",
+      "auto_route": true,
+      "loopback_address": "10.7.0.1",
+      "route_address": "10.7.0.1/32"
+    }
+  ],
+  "route": {
+    "auto_detect_interface": true
+  }
+}
+```
+
+Deploying it on a gateway, such as a router, makes it work for the entire local network.
+
+#### Clash
+
+Install from the [App Store](https://apps.apple.com/app/id6794257189), write a correct configuration, and turn on the VPN.
+
+You need to configure `tun.loopback-address`:
+
+```yaml
+tun:
+  loopback-address:
+    - 10.7.0.1
+```
+
+#### Closed-Source Software
+
+If you subscribe to and use Surge, you need to configure `General.tun-included-routes` and `IP Rewrite`:
+
+```ini
+[General]
+tun-included-routes = %INSERT% 10.7.0.1/32
+
+[IP Rewrite]
+10.7.0.1 = reflect
+```
+
+`ipv6-vif = disabled` is not necessary for Swipt.
+
+For other Surge-like apps without public documentation, ask their developers how to configure it.
 
 ## Automatic Unlock
 
