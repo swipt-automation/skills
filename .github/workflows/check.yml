@@ -23,5 +23,7 @@ jobs:
       - run: bun install --frozen-lockfile
       - run: bun install --frozen-lockfile
         working-directory: sources/swipt
+      - run: bun run --cwd cli build
+        working-directory: sources/swipt
       - run: bun generate
       - run: bun generate --check

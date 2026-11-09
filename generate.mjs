@@ -24,11 +24,15 @@ for (const name of fs
   files.set(`api/${name}`, fs.readFileSync(path.join(api, name)));
 }
 
+const cli = path.join(swipt, "cli");
+const { bin } = JSON.parse(
+  fs.readFileSync(path.join(cli, "package.json"), "utf8"),
+);
 const sections = [];
 function visitCommand(args) {
   const help = execFileSync(
     process.execPath,
-    [path.join(swipt, "cli/swipt.mjs"), ...args, "--help"],
+    [path.join(cli, bin.swipt), ...args, "--help"],
     {
       cwd: swipt,
       env: { ...process.env, LC_ALL: "C" },
