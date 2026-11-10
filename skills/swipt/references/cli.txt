@@ -71,7 +71,7 @@ usage: swipt device COMMAND
 
 commands:
   list         List the devices, adding the ones found on the local network
-  add URL      Add a device by its URL; needed when it is remote or requires a token
+  add URL      Add a device by its URL; needed when it's remote or requires a token
   remove NAME  Forget a device
   stop         Stop the Swipt server
   logs         Print the logs
@@ -86,7 +86,7 @@ usage: swipt device list
 options:
   -h, --help  help
 
-Add a device by its URL; needed when it is remote or requires a token
+Add a device by its URL; needed when it's remote or requires a token
 
 usage: swipt device add URL
 
@@ -401,9 +401,10 @@ options:
   --passcode CODE         set up auto-unlock with this passcode
   --passcode-type TYPE    pin (4 or 6 digits, default), numeric or alphanumeric
   --nightly               use nightly build
-  --no-setup              do not pair Swipt, trust its developer or publish its API
-  --no-setup-pair         do not pair Swipt
-  --no-setup-api          do not publish the API to the local network
+  --force                 install over the same or a later build
+  --no-setup              don't pair Swipt, trust its developer or publish its API
+  --no-setup-pair         don't pair Swipt
+  --no-setup-api          don't publish the API to the local network
   -h, --help              help
 
 Update or renew Swipt
@@ -416,9 +417,9 @@ options:
   --passcode CODE         unlock device with this passcode
   --passcode-type TYPE    pin (4 or 6 digits, default), numeric or alphanumeric
   --nightly               use nightly build
-  --no-setup              do not pair Swipt, trust its developer or publish its API
-  --no-setup-pair         do not pair Swipt
-  --no-setup-api          do not publish the API to the local network
+  --no-setup              don't pair Swipt, trust its developer or publish its API
+  --no-setup-pair         don't pair Swipt
+  --no-setup-api          don't publish the API to the local network
   -h, --help              help
 
 Set up Swipt
@@ -430,8 +431,8 @@ options:
   --team ID               team ID, required if more than one
   --passcode CODE         set up auto-unlock with this passcode
   --passcode-type TYPE    pin (4 or 6 digits, default), numeric or alphanumeric
-  --no-setup-pair         do not pair Swipt
-  --no-setup-api          do not publish the API to the local network
+  --no-setup-pair         don't pair Swipt
+  --no-setup-api          don't publish the API to the local network
   -h, --help              help
 
 Remove Swipt
